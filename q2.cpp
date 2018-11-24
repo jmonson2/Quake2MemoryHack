@@ -91,7 +91,7 @@ int main()
 
 
     nread = process_vm_writev(pid, local, 8, remote, 8, 0);
-    std::cout << "Bites written: " << nread << std::endl;
+    std::cout << "Bytes written: " << nread << std::endl;
     return 0;
 
 }
