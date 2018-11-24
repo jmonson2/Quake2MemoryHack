@@ -2,6 +2,7 @@
 #include <iostream>
 #include <limits>
 #include <stdlib.h>
+#include <unistd.h>
 pid_t getPid()
 {
     char line[10];
@@ -28,6 +29,7 @@ u_int64_t getHeap(pid_t pid)
 }
 int main()
 {
+    std::string input;
     u_int64_t shells = 0x67978;
     u_int64_t bullets = 0x6797c;
     u_int64_t cells = 0x67980;
@@ -89,7 +91,12 @@ int main()
 
 
 
-
+    do
+    {
+        nread = process_vm_writev(pid, local, 8, remote, 8, 0);
+        sleep(1);
+    }
+    while(input!="quit");
     nread = process_vm_writev(pid, local, 8, remote, 8, 0);
     std::cout << "Bytes written: " << nread << std::endl;
     return 0;
