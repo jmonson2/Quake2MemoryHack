@@ -1,2 +1,2 @@
 # Quake2MemoryHack
-Infinite Ammo for Linux under Yamagi client
+Infinite Ammo, Health, and Armor for Linux under Yamagi client. Used for testing process_vm_writev.
